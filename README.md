@@ -63,6 +63,30 @@ Edit `mcp.json` and replace the placeholder API keys:
 | Context7 | `YOUR_CONTEXT7_API_KEY` | [context7.com](https://context7.com) |
 | Morph | `YOUR_MORPH_API_KEY` | [morphllm.com](https://morphllm.com) |
 
+## Model Context Protocol (MCP) Integrations
+
+MCPs extend AI capabilities by providing real-time context and tools. This template includes 10 pre-configured MCPs:
+
+### Enabled MCPs
+
+| MCP | What | Why |
+|-----|------|-----|
+| **Exa** | Real-time web search, deep research, code context lookup | Find latest code examples, libraries, best practices, and technical documentation |
+| **Firecrawl** | Advanced web scraping and content extraction | Extract structured data from websites for analysis, documentation, or data processing |
+| **Ref** | Technical documentation lookup (SDKs, APIs, frameworks) | Get accurate, up-to-date docs for libraries and APIs without outdated knowledge cutoff |
+| **shadcn** | shadcn/ui component management and installation | Seamlessly add and manage UI components in your projects |
+| **Supabase** | Database querying, schema management, and backend operations | Direct database access for migrations, testing, and data management |
+| **Chrome DevTools** | Browser automation and testing | Control real browsers for E2E testing, visual validation, and interactive testing |
+| **Mayar** | Invoice generation and payment tracking | Create invoices and manage billing workflows programmatically |
+| **Hugeicons** | Icon library and SVG access | Quickly search and integrate high-quality icons |
+| **Next DevTools** | Next.js runtime diagnostics and MCP integration | Deep insight into Next.js apps, routes, errors, and performance |
+| **Morph** | Intelligent codebase search and analysis | Semantic code search to find implementations, patterns, and context across large codebases |
+
+### Disabled MCPs (Optional)
+
+- **task-master-ai** - Task generation and management (disable if not using)
+- **context7** - Context management (disable if not using advanced context features)
+
 ## Usage
 
 ### Commands
