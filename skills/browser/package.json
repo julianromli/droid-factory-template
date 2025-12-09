@@ -1,0 +1,9 @@
+{
+  "name": "browser-skill",
+  "version": "1.0.0",
+  "description": "Minimal Chrome DevTools Protocol tools for browser automation",
+  "type": "module",
+  "dependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}

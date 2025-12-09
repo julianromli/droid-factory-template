@@ -1,0 +1,506 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Task Patterns Configuration",
+  "description": "Pre-defined orchestration patterns for common development tasks",
+  "version": "1.0.0",
+  "patterns": [
+    {
+      "id": "full-stack-feature",
+      "name": "Full Stack Feature Implementation",
+      "description": "Complete feature spanning backend, frontend, and testing",
+      "triggers": [
+        "build feature",
+        "implement feature",
+        "add feature",
+        "create feature"
+      ],
+      "complexity": "medium-high",
+      "phases": [
+        {
+          "id": "phase-1-architecture",
+          "name": "Architecture & Design",
+          "parallel": false,
+          "droids": ["backend-architect"],
+          "description": "Design API endpoints, database schema, and system architecture",
+          "outputs": [
+            "API specification",
+            "Database schema",
+            "Architecture diagrams"
+          ]
+        },
+        {
+          "id": "phase-2-security-review",
+          "name": "Security Review",
+          "parallel": false,
+          "droids": ["security-auditor"],
+          "description": "Review architecture for security requirements and vulnerabilities",
+          "dependencies": ["phase-1-architecture"],
+          "outputs": [
+            "Security requirements",
+            "Risk assessment",
+            "Security recommendations"
+          ]
+        },
+        {
+          "id": "phase-3-implementation",
+          "name": "Core Implementation",
+          "parallel": true,
+          "droids": ["backend-typescript-architect", "frontend-developer"],
+          "description": "Implement backend APIs and frontend components in parallel",
+          "dependencies": ["phase-2-security-review"],
+          "outputs": [
+            "Backend implementation",
+            "Frontend components",
+            "Integration code"
+          ]
+        },
+        {
+          "id": "phase-4-testing",
+          "name": "Testing",
+          "parallel": false,
+          "droids": ["test-automator"],
+          "description": "Create comprehensive test suite for the feature",
+          "dependencies": ["phase-3-implementation"],
+          "outputs": [
+            "Unit tests",
+            "Integration tests",
+            "E2E tests"
+          ]
+        },
+        {
+          "id": "phase-5-review",
+          "name": "Code Review",
+          "parallel": false,
+          "droids": ["code-reviewer"],
+          "description": "Quality and security code review",
+          "dependencies": ["phase-4-testing"],
+          "outputs": [
+            "Code review report",
+            "Quality assessment",
+            "Improvement recommendations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bug-fix",
+      "name": "Bug Fix Workflow",
+      "description": "Systematic bug diagnosis and resolution",
+      "triggers": [
+        "fix bug",
+        "error",
+        "not working",
+        "broken",
+        "issue"
+      ],
+      "complexity": "simple-medium",
+      "phases": [
+        {
+          "id": "phase-1-diagnosis",
+          "name": "Diagnosis",
+          "parallel": false,
+          "droids": ["debugger"],
+          "description": "Identify root cause and reproduction steps",
+          "outputs": [
+            "Root cause analysis",
+            "Reproduction steps",
+            "Impact assessment"
+          ]
+        },
+        {
+          "id": "phase-2-fix",
+          "name": "Implementation",
+          "parallel": false,
+          "droids": ["auto-select-by-domain"],
+          "description": "Implement fix based on diagnosis",
+          "dependencies": ["phase-1-diagnosis"],
+          "outputs": [
+            "Code fix",
+            "Verification steps"
+          ]
+        },
+        {
+          "id": "phase-3-testing",
+          "name": "Verification",
+          "parallel": false,
+          "droids": ["test-automator"],
+          "description": "Create tests to prevent regression",
+          "dependencies": ["phase-2-fix"],
+          "outputs": [
+            "Regression tests",
+            "Test coverage report"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "authentication-system",
+      "name": "Authentication Implementation",
+      "description": "Secure authentication system with best practices",
+      "triggers": [
+        "add authentication",
+        "implement login",
+        "user auth",
+        "sign in",
+        "user login"
+      ],
+      "complexity": "medium",
+      "phases": [
+        {
+          "id": "phase-1-security-design",
+          "name": "Security Design",
+          "parallel": false,
+          "droids": ["security-auditor"],
+          "description": "Design secure authentication flow with OWASP compliance",
+          "outputs": [
+            "Auth flow diagram",
+            "Security requirements",
+            "Token strategy"
+          ]
+        },
+        {
+          "id": "phase-2-architecture",
+          "name": "API Architecture",
+          "parallel": false,
+          "droids": ["backend-architect"],
+          "description": "Design auth API endpoints and database schema",
+          "dependencies": ["phase-1-security-design"],
+          "outputs": [
+            "API endpoints",
+            "Database schema",
+            "Session management design"
+          ]
+        },
+        {
+          "id": "phase-3-implementation",
+          "name": "Implementation",
+          "parallel": true,
+          "droids": ["backend-typescript-architect", "frontend-developer"],
+          "description": "Implement auth API and UI components",
+          "dependencies": ["phase-2-architecture"],
+          "outputs": [
+            "Auth API",
+            "Login/Signup UI",
+            "Session handling"
+          ]
+        },
+        {
+          "id": "phase-4-security-validation",
+          "name": "Security Validation",
+          "parallel": false,
+          "droids": ["security-auditor"],
+          "description": "Validate implementation meets security requirements",
+          "dependencies": ["phase-3-implementation"],
+          "outputs": [
+            "Security audit report",
+            "Vulnerability assessment"
+          ]
+        },
+        {
+          "id": "phase-5-testing",
+          "name": "Testing",
+          "parallel": false,
+          "droids": ["test-automator"],
+          "description": "Create auth flow tests and security tests",
+          "dependencies": ["phase-4-security-validation"],
+          "outputs": [
+            "Auth flow tests",
+            "Security tests",
+            "E2E tests"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "payment-processing",
+      "name": "Payment System Implementation",
+      "description": "Complete payment processing with security and compliance",
+      "triggers": [
+        "payment",
+        "stripe integration",
+        "payment processing",
+        "checkout"
+      ],
+      "complexity": "high",
+      "phases": [
+        {
+          "id": "phase-1-security-requirements",
+          "name": "Security & Compliance",
+          "parallel": false,
+          "droids": ["security-auditor"],
+          "description": "Define PCI compliance and security requirements",
+          "outputs": [
+            "Security requirements",
+            "PCI compliance checklist",
+            "Data handling policies"
+          ]
+        },
+        {
+          "id": "phase-2-architecture",
+          "name": "Architecture Design",
+          "parallel": false,
+          "droids": ["backend-architect"],
+          "description": "Design payment API, webhooks, and database schema",
+          "dependencies": ["phase-1-security-requirements"],
+          "outputs": [
+            "Payment API design",
+            "Webhook architecture",
+            "Database schema"
+          ]
+        },
+        {
+          "id": "phase-3-core-implementation",
+          "name": "Core Implementation",
+          "parallel": true,
+          "droids": ["payment-integration", "database-admin"],
+          "description": "Implement payment integration and database layer",
+          "dependencies": ["phase-2-architecture"],
+          "outputs": [
+            "Stripe integration",
+            "Database migrations",
+            "Transaction handling"
+          ]
+        },
+        {
+          "id": "phase-4-ui-implementation",
+          "name": "UI Implementation",
+          "parallel": false,
+          "droids": ["frontend-developer"],
+          "description": "Build payment UI with Stripe Elements",
+          "dependencies": ["phase-3-core-implementation"],
+          "outputs": [
+            "Payment forms",
+            "Checkout flow",
+            "Payment confirmation"
+          ]
+        },
+        {
+          "id": "phase-5-security-hardening",
+          "name": "Security Hardening",
+          "parallel": false,
+          "droids": ["security-auditor"],
+          "description": "Implement security measures and validate compliance",
+          "dependencies": ["phase-4-ui-implementation"],
+          "outputs": [
+            "Security implementation",
+            "Compliance validation",
+            "Security testing"
+          ]
+        },
+        {
+          "id": "phase-6-testing",
+          "name": "Comprehensive Testing",
+          "parallel": true,
+          "droids": ["test-automator", "performance-engineer"],
+          "description": "Create test suite and performance validation",
+          "dependencies": ["phase-5-security-hardening"],
+          "outputs": [
+            "Payment tests",
+            "Webhook tests",
+            "Performance tests"
+          ]
+        },
+        {
+          "id": "phase-7-review",
+          "name": "Final Review",
+          "parallel": false,
+          "droids": ["code-reviewer"],
+          "description": "Comprehensive security and quality review",
+          "dependencies": ["phase-6-testing"],
+          "outputs": [
+            "Review report",
+            "Deployment checklist",
+            "Production readiness assessment"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "api-refactoring",
+      "name": "API Refactoring",
+      "description": "Refactor API for better performance and maintainability",
+      "triggers": [
+        "refactor api",
+        "optimize api",
+        "improve api",
+        "api performance"
+      ],
+      "complexity": "medium",
+      "phases": [
+        {
+          "id": "phase-1-analysis",
+          "name": "Performance Analysis",
+          "parallel": true,
+          "droids": ["performance-engineer", "backend-architect"],
+          "description": "Analyze current performance and identify bottlenecks",
+          "outputs": [
+            "Performance metrics",
+            "Bottleneck analysis",
+            "Optimization opportunities"
+          ]
+        },
+        {
+          "id": "phase-2-design",
+          "name": "Refactoring Design",
+          "parallel": false,
+          "droids": ["backend-architect"],
+          "description": "Design improved API structure and optimizations",
+          "dependencies": ["phase-1-analysis"],
+          "outputs": [
+            "Refactored API design",
+            "Migration strategy",
+            "Backward compatibility plan"
+          ]
+        },
+        {
+          "id": "phase-3-implementation",
+          "name": "Implementation",
+          "parallel": true,
+          "droids": ["backend-typescript-architect", "database-admin"],
+          "description": "Implement refactored API and database optimizations",
+          "dependencies": ["phase-2-design"],
+          "outputs": [
+            "Refactored code",
+            "Database optimizations",
+            "Migration scripts"
+          ]
+        },
+        {
+          "id": "phase-4-testing",
+          "name": "Testing & Validation",
+          "parallel": true,
+          "droids": ["test-automator", "performance-engineer"],
+          "description": "Validate refactoring and measure improvements",
+          "dependencies": ["phase-3-implementation"],
+          "outputs": [
+            "Test suite",
+            "Performance benchmarks",
+            "Regression tests"
+          ]
+        },
+        {
+          "id": "phase-5-review",
+          "name": "Code Review",
+          "parallel": false,
+          "droids": ["code-reviewer"],
+          "description": "Review refactored code for quality and consistency",
+          "dependencies": ["phase-4-testing"],
+          "outputs": [
+            "Code review",
+            "Quality assessment",
+            "Migration plan validation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "database-optimization",
+      "name": "Database Optimization",
+      "description": "Optimize database queries and schema for performance",
+      "triggers": [
+        "optimize database",
+        "slow queries",
+        "database performance",
+        "improve queries"
+      ],
+      "complexity": "medium",
+      "phases": [
+        {
+          "id": "phase-1-analysis",
+          "name": "Performance Analysis",
+          "parallel": false,
+          "droids": ["database-admin"],
+          "description": "Analyze query performance and identify bottlenecks",
+          "outputs": [
+            "Query performance report",
+            "Slow query analysis",
+            "Index recommendations"
+          ]
+        },
+        {
+          "id": "phase-2-optimization",
+          "name": "Optimization Implementation",
+          "parallel": false,
+          "droids": ["database-admin"],
+          "description": "Implement database optimizations",
+          "dependencies": ["phase-1-analysis"],
+          "outputs": [
+            "Optimized queries",
+            "New indexes",
+            "Schema changes"
+          ]
+        },
+        {
+          "id": "phase-3-testing",
+          "name": "Performance Testing",
+          "parallel": true,
+          "droids": ["test-automator", "performance-engineer"],
+          "description": "Validate improvements and create performance tests",
+          "dependencies": ["phase-2-optimization"],
+          "outputs": [
+            "Performance tests",
+            "Benchmark results",
+            "Load testing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "security-audit",
+      "name": "Security Audit & Remediation",
+      "description": "Comprehensive security audit and vulnerability fixes",
+      "triggers": [
+        "security audit",
+        "security review",
+        "vulnerability scan",
+        "security check"
+      ],
+      "complexity": "medium-high",
+      "phases": [
+        {
+          "id": "phase-1-audit",
+          "name": "Security Audit",
+          "parallel": false,
+          "droids": ["security-auditor"],
+          "description": "Comprehensive security assessment using OWASP Top 10",
+          "outputs": [
+            "Security audit report",
+            "Vulnerability list",
+            "Risk assessment"
+          ]
+        },
+        {
+          "id": "phase-2-fixes",
+          "name": "Vulnerability Remediation",
+          "parallel": false,
+          "droids": ["auto-select-by-findings"],
+          "description": "Fix identified vulnerabilities",
+          "dependencies": ["phase-1-audit"],
+          "outputs": [
+            "Security fixes",
+            "Updated code",
+            "Security improvements"
+          ]
+        },
+        {
+          "id": "phase-3-validation",
+          "name": "Security Validation",
+          "parallel": true,
+          "droids": ["security-auditor", "test-automator"],
+          "description": "Validate fixes and create security tests",
+          "dependencies": ["phase-2-fixes"],
+          "outputs": [
+            "Validation report",
+            "Security tests",
+            "Compliance verification"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "created": "2024-10-17",
+    "author": "Factory Orchestrator System",
+    "usage": "This configuration defines common task patterns for the orchestrator to recognize and handle automatically."
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Orchestrator Configuration",
+  "description": "Main configuration for Factory CLI Orchestrator system",
+  "version": "1.0.0",
+  
+  "orchestrator": {
+    "max_concurrent_phases": 3,
+    "default_timeout_minutes": 90,
+    "auto_retry_failed_phases": true,
+    "max_retry_attempts": 2,
+    "context_retention_days": 7
+  },
+  
+  "droid_settings": {
+    "timeout_minutes": {
+      "frontend-developer": 45,
+      "backend-architect": 30,
+      "backend-typescript-architect": 45,
+      "security-auditor": 35,
+      "test-automator": 40,
+      "debugger": 25,
+      "code-reviewer": 30,
+      "performance-engineer": 40,
+      "database-admin": 30
+    },
+    
+    "retry_enabled": [
+      "frontend-developer",
+      "backend-typescript-architect",
+      "test-automator"
+    ]
+  },
+  
+  "task_patterns": {
+    "enabled": true,
+    "config_path": "~/.factory/orchestrator/task-patterns.json",
+    "auto_detect_patterns": true,
+    "confidence_threshold": 0.8
+  },
+  
+  "context_management": {
+    "context_dir": "~/.factory/orchestrator/contexts",
+    "auto_save_context": true,
+    "validate_context": true,
+    "conflict_detection": true,
+    "quality_gates": {
+      "require_testing_phase": true,
+      "require_security_review": ["authentication", "payment", "sensitive_data"],
+      "require_performance_review": ["payment", "api_refactoring", "performance_critical"],
+      "minimum_code_review": true
+    }
+  },
+  
+  "integration": {
+    "factory_cli": {
+      "version": ">=0.17.0",
+      "task_tool_integration": true,
+      "context_passing_method": "prompt_based"
+    }
+  },
+  
+  "monitoring": {
+    "log_level": "info",
+    "track_performance_metrics": true,
+    "save_execution_logs": true,
+    "log_dir": "~/.factory/orchestrator/logs"
+  },
+  
+  "quality_assurance": {
+    "auto_conflict_detection": true,
+    "integration_validation": true,
+    "completeness_checks": true,
+    "performance_benchmarks": {
+      "max_phase_overhead_minutes": 10,
+      "max_context_transfer_seconds": 5
+    }
+  },
+  
+  "notifications": {
+    "phase_completion": true,
+    "error_occurred": true,
+    "task_completed": true,
+    "integration_conflicts": true
+  }
+}
