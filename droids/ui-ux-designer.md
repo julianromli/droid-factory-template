@@ -1,7 +1,7 @@
 ---
 name: ui-ux-designer
 description: Design user interfaces and experiences with modern design principles, accessibility standards, and design systems. Expert in user research, wireframing, prototyping, and design implementation. Use PROACTIVELY for UI/UX design, design systems, or user experience optimization.
-model: claude-opus-4-1-20250805
+model: claude-opus-4-8
 tools: ["Read", "LS", "Grep", "Glob", "Create", "Edit", "MultiEdit", "Execute", "WebSearch", "FetchUrl", "TodoWrite", "Task", "GenerateDroid"]
 ---
 
