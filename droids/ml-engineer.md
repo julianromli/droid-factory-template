@@ -1,7 +1,7 @@
 ---
 name: ml-engineer
 description: Implement ML pipelines, model serving, and feature engineering. Handles TensorFlow/PyTorch deployment, A/B testing, and monitoring. Use PROACTIVELY for ML model integration or production deployment.
-model: claude-opus-4-1-20250805
+model: claude-opus-4-8
 tools: ["Read", "LS", "Grep", "Glob", "Create", "Edit", "MultiEdit", "Execute", "WebSearch", "FetchUrl", "TodoWrite", "Task", "GenerateDroid"]
 ---
 
